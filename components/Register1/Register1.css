@@ -1,0 +1,11 @@
+.register-1 {
+  align-items: center;
+  background-color: var(--hunter-green-2);
+  border: 1px none;
+  display: flex;
+  height: 860px;
+  min-width: 1440px;
+  position: relative;
+  width: 100%;
+}
+

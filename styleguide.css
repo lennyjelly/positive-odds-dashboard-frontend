@@ -1,0 +1,24 @@
+:root {
+  --beryl-green: #e1e2c2;
+  --black: #000000;
+  --hunter-green: #151615;
+  --log-cabin: #212323;
+  --mantis: #5ac561;
+  --mine-shaft: #2d3333;
+  --outer-space: #2a3635;
+  --outer-space-2: #2a3634;
+  --santas-gray: #9ea5ad;
+  --snow-drift: #f7f9f5;
+  --turquoise-pearl: #47b7cb;
+  --white: #ffffffcc;
+
+  --font-size-l: 16px;
+  --font-size-m: 14px;
+  --font-size-s: 12px;
+  --font-size-xl: 19px;
+  --font-size-xxl: 25px;
+  --font-size-xxxl: 49px;
+  --font-size-xxxxl: 65px;
+
+  --font-family-inter: 'Inter', Helvetica;
+}

@@ -1,0 +1,11 @@
+.mobile-sign-up-subscriptions {
+  align-items: center;
+  background-color: var(--hunter-green);
+  border: 1px none;
+  display: flex;
+  height: 1075px;
+  min-width: 485px;
+  position: relative;
+  width: 100%;
+}
+

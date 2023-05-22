@@ -1,0 +1,11 @@
+.tabletmedium-sign-up-subscriptions {
+  align-items: center;
+  background-color: var(--hunter-green);
+  border: 1px none;
+  display: flex;
+  height: 1109px;
+  min-width: 826px;
+  position: relative;
+  width: 100%;
+}
+

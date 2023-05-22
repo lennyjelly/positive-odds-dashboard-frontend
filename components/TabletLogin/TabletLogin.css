@@ -1,0 +1,11 @@
+.tablet-login {
+  align-items: center;
+  background-color: var(--hunter-green);
+  border: 1px none;
+  display: flex;
+  height: 860px;
+  min-width: 926px;
+  position: relative;
+  width: 100%;
+}
+
