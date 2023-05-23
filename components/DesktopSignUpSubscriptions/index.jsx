@@ -1,13 +1,18 @@
-import React from "react";
-import Frame286 from "../Frame286";
-import Frame3258 from "../Frame3258";
-import Frame3253 from "../Frame3253";
-import Frame2862 from "../Frame2862";
-import ButtonContinue from "../ButtonContinue";
-import TabsPayTime from "../TabsPayTime";
-import styled from "styled-components";
-import { InterBoldSnowDrift25px, InterBoldSnowDrift65px } from "../../styledMixins";
-import "./DesktopSignUpSubscriptions.css";
+import React, { useState } from 'react';
+import Frame286 from '../Frame286';
+import Frame3258 from '../Frame3258';
+import Frame3253 from '../Frame3253';
+import Frame2862 from '../Frame2862';
+import ButtonContinue from '../ButtonContinue';
+
+import styled from 'styled-components';
+import {
+  InterBoldSnowDrift25px,
+  InterBoldSnowDrift65px,
+  DesktopPoDashboardbody2Semibold,
+  DesktopPoDashboardbody2Regular,
+} from '../../styledMixins';
+import './DesktopSignUpSubscriptions.css';
 
 function DesktopSignUpSubscriptions(props) {
   const {
@@ -21,7 +26,10 @@ function DesktopSignUpSubscriptions(props) {
     frame32531Props,
     frame32582Props,
     frame32532Props,
+    className,
   } = props;
+
+  const [selectedPlan, setSelectedPlan] = useState('monthly-daily-better');
 
   return (
     <div className="desktop-sign-up-subscriptions screen">
@@ -39,12 +47,19 @@ function DesktopSignUpSubscriptions(props) {
           <Ellipse2095></Ellipse2095>
           <Logo src={logo} alt="Logo" />
           <InfoSubscriptions>
-            <DailyBetter>
+            <DailyBetter
+              selectedPlan={selectedPlan === 'monthly-daily-better'}
+              onClick={() => setSelectedPlan('monthly-daily-better')}
+            >
               <NamePrice>
                 <DailyBetter1>{dailyBetter}</DailyBetter1>
                 <Frame286 />
               </NamePrice>
-              <Frame3258 popularOremIpsumDolorSitAmet={frame32581Props.popularOremIpsumDolorSitAmet} />
+              <Frame3258
+                popularOremIpsumDolorSitAmet={
+                  frame32581Props.popularOremIpsumDolorSitAmet
+                }
+              />
               <Frame3253
                 frame32511Props={frame32531Props.frame32511Props}
                 frame32512Props={frame32531Props.frame32512Props}
@@ -54,12 +69,19 @@ function DesktopSignUpSubscriptions(props) {
                 frame32516Props={frame32531Props.frame32516Props}
               />
             </DailyBetter>
-            <Premium>
+            <Premium
+              selectedPlan={selectedPlan === 'monthly-premium'}
+              onClick={() => setSelectedPlan('monthly-premium')}
+            >
               <NamePrice>
                 <DailyBetter1>{premium}</DailyBetter1>
                 <Frame2862 />
               </NamePrice>
-              <Frame3258 popularOremIpsumDolorSitAmet={frame32582Props.popularOremIpsumDolorSitAmet} />
+              <Frame3258
+                popularOremIpsumDolorSitAmet={
+                  frame32582Props.popularOremIpsumDolorSitAmet
+                }
+              />
               <Frame3253
                 frame32511Props={frame32532Props.frame32511Props}
                 frame32512Props={frame32532Props.frame32512Props}
@@ -70,14 +92,107 @@ function DesktopSignUpSubscriptions(props) {
               />
             </Premium>
           </InfoSubscriptions>
+          {/* TODO: integrate API  */}
           <ButtonContinue />
         </OverlapGroup>
         <Title>{title}</Title>
-        <TabsPayTime />
+        <TabsPayTime1 className={`tabs-pay-time ${className || ''}`}>
+          <MonthlySelected className="monthly-selected">
+            <Monthly className="monthly">Monthly</Monthly>
+          </MonthlySelected>
+          <WeeklyDisabled className="weekly-disabled">
+            <Weekly className="weekly">Weekly</Weekly>
+          </WeeklyDisabled>
+          <WeeklyDisabled className="yearly-disabled">
+            <Weekly className="yearly">Yearly</Weekly>
+          </WeeklyDisabled>
+        </TabsPayTime1>
       </Frame3245>
     </div>
   );
 }
+
+const TabsPayTime1 = styled.div`
+  display: flex;
+  width: fit-content;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 4px;
+  position: absolute;
+  top: 206px;
+  left: 591px;
+  background-color: var(--mine-shaft);
+  border-radius: 8px;
+  overflow: hidden;
+
+  &.tabs-pay-time.tabs-pay-time-1 {
+    position: relative;
+    top: unset;
+    left: unset;
+  }
+
+  &.tabs-pay-time.tabs-pay-time-2 {
+    position: relative;
+    top: unset;
+    left: unset;
+  }
+`;
+
+const MonthlySelected = styled.div`
+  display: flex;
+  width: fit-content;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 14px;
+  position: relative;
+  margin-top: -8px;
+  margin-bottom: -8px;
+  background-color: var(--mantis);
+  border-radius: 6px;
+  overflow: hidden;
+`;
+
+const Monthly = styled.div`
+  ${DesktopPoDashboardbody2Semibold}
+  position: relative;
+  width: fit-content;
+  margin-top: -7px;
+  margin-bottom: -5px;
+  font-weight: 600;
+  color: var(--outer-space-2);
+  line-height: 24px;
+  white-space: nowrap;
+`;
+
+const WeeklyDisabled = styled.div`
+  display: flex;
+  width: fit-content;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 14px;
+  position: relative;
+  margin-top: -8px;
+  margin-bottom: -8px;
+  border-radius: 6px;
+  overflow: hidden;
+`;
+
+const Weekly = styled.div`
+  ${DesktopPoDashboardbody2Regular}
+  position: relative;
+  width: fit-content;
+  margin-top: -7px;
+  margin-bottom: -5px;
+  font-weight: 400;
+  color: var(--santas-gray);
+  line-height: 24px;
+  white-space: nowrap;
+`;
 
 const Frame3245 = styled.div`
   position: relative;
@@ -123,7 +238,13 @@ const Ellipse2094 = styled.div`
   filter: blur(10px);
   background: radial-gradient(
     50% 50% at 50% 50%,
-    rgba(90.00000223517418, 197.0000034570694, 97.00000181794167, 0.4000000059604645) 0%,
+    rgba(
+        90.00000223517418,
+        197.0000034570694,
+        97.00000181794167,
+        0.4000000059604645
+      )
+      0%,
     rgba(42.000001296401024, 54.00000058114529, 53.00000064074993, 0) 100%
   );
 `;
@@ -138,7 +259,13 @@ const Ellipse2095 = styled.div`
   filter: blur(10px);
   background: radial-gradient(
     50% 50% at 50% 50%,
-    rgba(90.00000223517418, 197.0000034570694, 97.00000181794167, 0.4000000059604645) 0%,
+    rgba(
+        90.00000223517418,
+        197.0000034570694,
+        97.00000181794167,
+        0.4000000059604645
+      )
+      0%,
     rgba(42.000001296401024, 54.00000058114529, 53.00000064074993, 0) 100%
   );
 `;
@@ -176,8 +303,10 @@ const DailyBetter = styled.div`
   border-radius: 6px;
   overflow: hidden;
   border: 2px solid;
-  border-color: var(--mantis);
-  box-shadow: 2px 2px 25px #080b0b80;
+  border-color: ${(props) =>
+    props.selectedPlan ? 'var(--mantis)' : 'var(--mine-shaft)'};
+  box-shadow: ${(props) =>
+    props.selectedPlan ? '2px 2px 25px #080b0b80' : 'none'};
 `;
 
 const NamePrice = styled.div`
@@ -210,6 +339,11 @@ const Premium = styled.div`
   background-color: var(--mine-shaft);
   border-radius: 6px;
   overflow: hidden;
+  border: 2px solid;
+  border-color: ${(props) =>
+    props.selectedPlan ? 'var(--mantis)' : 'var(--mine-shaft)'};
+  box-shadow: ${(props) =>
+    props.selectedPlan ? '2px 2px 25px #080b0b80' : 'none'};
 `;
 
 const Title = styled.h1`

@@ -27,6 +27,7 @@ function DesktopSignUp(props) {
 
   const onSubmit = (data) => {
     console.log(data);
+    history.push('/sign-up/subscriptions');
   };
 
   return (
