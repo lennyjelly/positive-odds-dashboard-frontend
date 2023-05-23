@@ -1,13 +1,16 @@
-import React from "react";
-import styled from "styled-components";
-import { DesktopPoDashboardbody2Regular } from "../../styledMixins";
-
+import React from 'react';
+import styled from 'styled-components';
+import { DesktopPoDashboardbody2Regular } from '../../styledMixins';
+import { useHistory } from 'react-router-dom';
 
 function Frame313922() {
+  const history = useHistory();
   return (
     <CTABlock>
       <HintText>Don’t have an account yet?</HintText>
-      <HintText1>Sign up now</HintText1>
+      <HintText1 onClick={() => history.replace('/sign-up')}>
+        Sign up now
+      </HintText1>
     </CTABlock>
   );
 }
@@ -42,6 +45,7 @@ const HintText1 = styled.div`
   line-height: 24px;
   text-decoration: underline;
   white-space: nowrap;
+  cursor: pointer;
 `;
 
 const CTABlock1 = styled.div`

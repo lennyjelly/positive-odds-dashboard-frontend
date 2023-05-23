@@ -25,60 +25,52 @@ function DesktopLoginFields() {
   return (
     <Fields onSubmit={handleSubmit(onSubmit)}>
       <InputEmail>
-        <InputEmail>
-          <InputEmail>
-            <Label>Email</Label>
-            <Controller
+        <Label>Email</Label>
+        <Controller
+          name="email"
+          control={control}
+          rules={{
+            required: true,
+          }}
+          render={({ field }) => (
+            <InputField
+              {...field}
+              type="text"
               name="email"
-              control={control}
-              rules={{
-                required: true,
-              }}
-              render={({ field }) => (
-                <InputField
-                  {...field}
-                  type="text"
-                  name="email"
-                  placeholder="youremail@gmail.com"
-                ></InputField>
-              )}
-            />
-          </InputEmail>
-        </InputEmail>
+              placeholder="youremail@gmail.com"
+            ></InputField>
+          )}
+        />
       </InputEmail>
 
       <InputPassword>
-        <InputPassword>
-          <InputPassword>
-            <Label>Password</Label>
-            <PasswordContainer>
-              <Controller
-                name="password"
-                control={control}
-                rules={{
-                  required: true,
-                }}
-                render={({ field }) => (
-                  <PasswordInputField
-                    {...field}
-                    type="password"
-                  ></PasswordInputField>
-                )}
-              />
+        <Label>Password</Label>
+        <PasswordContainer>
+          <Controller
+            name="password"
+            control={control}
+            rules={{
+              required: true,
+            }}
+            render={({ field }) => (
+              <PasswordInputField
+                {...field}
+                type="password"
+              ></PasswordInputField>
+            )}
+          />
 
-              <EyeIconContainer>
-                <IconEye
-                  src="/img/ic-baseline-remove-red-eye-3@2x.png"
-                  alt="icon-eye"
-                />
-              </EyeIconContainer>
-            </PasswordContainer>
-          </InputPassword>
-          <FrameForgotPass>
-            <TextButtonForgotPass>Forgot your password?</TextButtonForgotPass>
-          </FrameForgotPass>
-        </InputPassword>
+          <EyeIconContainer>
+            <IconEye
+              src="/img/ic-baseline-remove-red-eye-3@2x.png"
+              alt="icon-eye"
+            />
+          </EyeIconContainer>
+        </PasswordContainer>
       </InputPassword>
+      <FrameForgotPass>
+        <TextButtonForgotPass>Forgot your password?</TextButtonForgotPass>
+      </FrameForgotPass>
 
       <ButtonLogin type="submit" disabled={!isValid}>
         Login
