@@ -1,0 +1,11 @@
+.desktop-dashboard {
+  align-items: center;
+  background-color: var(--white);
+  border: 1px none;
+  display: flex;
+  min-height: 1201px;
+  min-width: 1440px;
+  position: relative;
+  width: 100%;
+}
+
