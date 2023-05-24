@@ -5,8 +5,12 @@ import Login from './pages/login';
 import SignUp from './pages/sign-up';
 import Subscriptions from './pages/subscriptions';
 import Dashboard from './pages/dashboard';
+import Games from './pages/games';
+import AdminSMS from './pages/sms';
+import Backtesting from './pages/backtesting';
 
 function App() {
+  // TODO: Handle rerouting of pages according to roles (subscribed user and admin)
   return (
     <Router>
       <Switch>
@@ -21,6 +25,15 @@ function App() {
         </Route>
         <Route exact path={'/dashboard'}>
           <Dashboard />
+        </Route>
+        <Route exact path={'/games/:type'}>
+          <Games />
+        </Route>
+        <Route exact path={'/send-sms'}>
+          <AdminSMS />
+        </Route>
+        <Route exact path={'/backtesting'}>
+          <Backtesting />
         </Route>
         <Route path={'*'}>
           <NotFound />

@@ -92,6 +92,7 @@ function DesktopDashboard(props) {
 
   return (
     <div className="desktop-dashboard screen">
+      {/* TODO: Separate sidebar component */}
       <FixedSideBar>
         <TopMenuContainer>
           <CompanyLogo src={welcomeMessage} alt="company-logo" />
