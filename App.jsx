@@ -26,7 +26,7 @@ function App() {
         <Route exact path={'/dashboard'}>
           <Dashboard />
         </Route>
-        <Route exact path={'/games/:type'}>
+        <Route path={'/games/:type'}>
           <Games />
         </Route>
         <Route exact path={'/send-sms'}>

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './index.css';
 import './globals.css';
 import './styleguide.css';
 import App from './App';
