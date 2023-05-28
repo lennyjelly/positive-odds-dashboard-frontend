@@ -1,6 +1,7 @@
 import React from 'react';
 import * as NBAIcons from 'react-nba-logos';
 import LiveIcon from '../../static/img/live_icon.png';
+import BaseButton from '../Buttons/BaseButton';
 
 const FullGameCard = ({ game }) => {
   const HomeIcon = NBAIcons[game.home.team];
@@ -113,6 +114,15 @@ const FullGameCard = ({ game }) => {
             <div>{game.home.opening.injuries}</div>
           </div>
         </div>
+      </div>
+
+      <div className="mt-4">
+        <BaseButton
+          btnName={'Set Game Signals'}
+          onClickHandler={() => {
+            console.log('Set Game Signals');
+          }}
+        />
       </div>
     </div>
   );
