@@ -5,9 +5,9 @@ import BlueEllipse from '../../static/img/blue-ellipse.png';
 
 const LiveGames = () => {
   return (
-    <div>
+    <div className="px-16">
       <div></div>
-      <div className="flex text-xl">
+      <div className="flex text-xl py-6">
         <div>Tonight</div>
         <div className="flex items-center mx-2">
           <img src={BlueEllipse} />

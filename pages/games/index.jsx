@@ -41,7 +41,7 @@ const Games = () => {
 
       {/* Top Section */}
       <div className="flex justify-between">
-        <div className="text-2xl">{renderPageTitle()}</div>
+        <div className="text-2xl py-4 px-16">{renderPageTitle()}</div>
 
         <div className="flex">
           <div>Bell Icon</div>
@@ -50,7 +50,11 @@ const Games = () => {
       </div>
 
       <div>
-        <InjuryBanner />
+        <InjuryBanner
+          message={
+            'Player name has been injured! Donec sodales tellus accumsan, suscipit felis vitae, iacu.'
+          }
+        />
       </div>
       {renderGamePage()}
     </div>
