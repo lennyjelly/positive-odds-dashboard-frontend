@@ -5,7 +5,7 @@ const BaseButton = ({ btnName, onClickHandler }) => {
     <button
       type="button"
       onClick={onClickHandler}
-      className=" text-main-dark-green bg-main-green w-[350px] py-3 rounded-md"
+      className=" text-main-dark-green bg-main-green w-full py-3 rounded-md"
     >
       {btnName}
     </button>

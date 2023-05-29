@@ -8,7 +8,7 @@ const FullGameCard = ({ game }) => {
   const AwayIcon = NBAIcons[game.away.team];
 
   return (
-    <div className="w-desktop-card-w h-desktop-card-h bg-card-bg flex flex-col items-center p-8 rounded-xl">
+    <div className="w-desktop-card-w-live h-desktop-card-h-live bg-card-bg flex flex-col items-center p-8 rounded-xl mr-4">
       <div>
         <div></div>
         <div>
@@ -29,7 +29,7 @@ const FullGameCard = ({ game }) => {
               <div className=" font-light text-xs">Away</div>
             </div>
             <div className=" px-11">
-              <img src={LiveIcon} />
+              <img src={LiveIcon} className="w-16" />
             </div>
             <div className="flex flex-col items-center">
               <div className=" text-lg">{game.home.team}</div>
@@ -41,22 +41,7 @@ const FullGameCard = ({ game }) => {
 
       <div className="flex flex-col items-center mt-4">
         <div className="my-2">Current</div>
-        <div className=" w-desktop-inner-w h-desktop-inner-h bg-secondary-bg-gray rounded-md flex flex-col justify-between p-4">
-          {/* <div>
-            <div>{game.away.current.pointspread}</div>
-            <div>{game.away.current.moneyline}</div>
-            <div>{game.away.current.liveline}</div>
-          </div>
-          <div>
-            <div>Open spread</div>
-            <div>Money line</div>
-            <div>Live line</div>
-          </div>
-          <div>
-            <div>{game.home.current.pointspread}</div>
-            <div>{game.home.current.moneyline}</div>
-            <div>{game.home.current.liveline}</div>
-          </div> */}
+        <div className=" w-desktop-inner-w-live h-desktop-inner-h-live bg-secondary-bg-gray rounded-md flex flex-col justify-between p-4">
           <div className="flex justify-around">
             <div>{game.away.current.pointspread}</div>
             <div>Open spread</div>
@@ -77,22 +62,7 @@ const FullGameCard = ({ game }) => {
 
       <div className="flex flex-col items-center mt-4">
         <div className="my-2">Opening</div>
-        <div className=" w-desktop-inner-w h-44 bg-secondary-bg-gray rounded-md flex flex-col justify-between p-4">
-          {/* <div>
-            <div>{game.away.current.pointspread}</div>
-            <div>{game.away.current.moneyline}</div>
-            <div>{game.away.current.liveline}</div>
-          </div>
-          <div>
-            <div>Open spread</div>
-            <div>Money line</div>
-            <div>Live line</div>
-          </div>
-          <div>
-            <div>{game.home.current.pointspread}</div>
-            <div>{game.home.current.moneyline}</div>
-            <div>{game.home.current.liveline}</div>
-          </div> */}
+        <div className=" w-desktop-inner-w-live h-44 bg-secondary-bg-gray rounded-md flex flex-col justify-between p-4">
           <div className="flex justify-around">
             <div>{game.away.opening.pointspread}</div>
             <div>Open spread</div>
@@ -116,7 +86,7 @@ const FullGameCard = ({ game }) => {
         </div>
       </div>
 
-      <div className="mt-4">
+      <div className="mt-4 w-full px-10">
         <BaseButton
           btnName={'Set Game Signals'}
           onClickHandler={() => {
